@@ -6,11 +6,18 @@
           content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', config('app.name'))</title>
+
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        @vite('resources/css/app.css')
+    @else
+        <script src="https://cdn.tailwindcss.com"></script>
+    @endif
 </head>
-<body class="">
+<body class="font-sans antialiased">
     <main class="">
         @yield('content')
     </main>
+    @vite('resources/js/app.js')
     @stack('scripts')
 </body>
 </html>

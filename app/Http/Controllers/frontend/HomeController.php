@@ -1,10 +1,11 @@
 <?php
 
-    namespace App\Http\Controllers;
+    namespace App\Http\Controllers\frontend;
 
+    use App\Http\Controllers\Controller;
     use Illuminate\Contracts\View\Factory;
-    use Illuminate\Foundation\Application;
     use Illuminate\Contracts\View\View;
+    use Illuminate\Foundation\Application;
 
     class HomeController extends Controller
     {

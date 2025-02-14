@@ -8,16 +8,17 @@
     <title>@yield('title', config('app.name'))</title>
 
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite('resources/css/app.css')
+        @vite('resources/assets/admin/css/app.css')
     @else
         <script src="https://cdn.tailwindcss.com"></script>
     @endif
 </head>
-<body class="font-sans antialiased">
-    <main class="">
+<body class="font-sans antialiased dark:bg-gray-900 dark:text-gray-100">
+    @include('admin.layouts.navigation')
+    <main class="container py-3">
         @yield('content')
     </main>
-    @vite('resources/js/app.js')
+    @vite('resources/assets/admin/js/app.js')
     @stack('scripts')
 </body>
 </html>

@@ -13,7 +13,10 @@
         public function run(): void
         {
             $this->call([
-                UsersTableSeeder::class
+                UsersTableSeeder::class,
+                GenresTableSeeder::class,
+                BooksTableSeeder::class,
+                AuthorsTableSeeder::class,
             ]);
         }
     }

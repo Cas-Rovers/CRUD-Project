@@ -15,6 +15,6 @@
          */
         public function index(): Factory|Application|View
         {
-            return view('welcome');
+            return view('frontend.welcome');
         }
     }

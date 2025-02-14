@@ -11,15 +11,15 @@
         public function up(): void
         {
             Schema::create('cache', function (Blueprint $table) {
-                $table->string('key')->primary();
-                $table->mediumText('value');
-                $table->integer('expiration');
+                $table->string('key')->primary()->comment('The unique identifier for the cache');
+                $table->mediumText('value')->comment('The value stored in the cache');
+                $table->integer('expiration')->comment('The expiration time of the cache in seconds');
             });
 
             Schema::create('cache_locks', function (Blueprint $table) {
-                $table->string('key')->primary();
-                $table->string('owner');
-                $table->integer('expiration');
+                $table->string('key')->primary()->comment('The unique identifier for the cache lock');
+                $table->string('owner')->comment('The owner for the lock');
+                $table->integer('expiration')->comment('The expiration time of the lock in seconds');
             });
         }
 

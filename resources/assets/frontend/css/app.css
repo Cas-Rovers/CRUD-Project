@@ -1,0 +1,10 @@
+@charset "UTF-8";
+@import "tailwindcss";
+@import "./theme.css";
+@import "./base.css";
+@import "./components.css";
+@import "./utilities.css";
+@import "./typography.css";
+
+@source '../../../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source "../../../views/frontend";

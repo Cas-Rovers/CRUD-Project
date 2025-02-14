@@ -307,7 +307,7 @@
         |
         | When set to true (default), this option enforces nullable Eloquent relationships.
         | However, in cases where the application logic ensures the presence of related
-        | records it may be desirable to set this option too false to avoid unwanted null warnings.
+        | records, it may be desirable to set this option too false to avoid unwanted null warnings.
         |
         | Default: true
         | A not null column with no foreign key constraint will have a "nullable" relationship.
@@ -332,7 +332,7 @@
         |
         */
         'post_migrate' => [
-            // 'ide-helper:models --nowrite',
+            'ide-helper:models --nowrite',
         ],
 
         /*

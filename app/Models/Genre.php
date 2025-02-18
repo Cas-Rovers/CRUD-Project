@@ -7,6 +7,12 @@
     use Illuminate\Database\Eloquent\Model;
     use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+    /**
+     * Genre Model
+     *
+     * Represents a genre entity with attributes like name and description.
+     * A genre can be associated with many books through a many-to-many relationship.
+     */
     class Genre extends Model
     {
         /** @use HasFactory<GenreFactory> */
@@ -19,9 +25,8 @@
          */
         protected $fillable = [
             'name',
-            'description'
+            'description',
         ];
-
 
         /**
          * Get the books associated with the genre.

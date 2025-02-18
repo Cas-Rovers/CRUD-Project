@@ -10,15 +10,13 @@
          */
         public function up(): void
         {
-            Schema::create('books', function (Blueprint $table) {
+            Schema::create('books', function(Blueprint $table) {
                 $table->id()->comment('Unique identifier for the book');
                 $table->string('title')->comment('The title of the book');
                 $table->text('description')->comment('The description of the book');
-                $table->foreignId('genre_id')->constrained('genres',
-                    'id')->comment('Foreign key constraint referencing the genres table');
                 $table->decimal('price')->comment('The price of the book');
                 $table->integer('stock')->comment('The stock of the book');
-                $table->dateTime('published_at')->comment('The date the book was published');
+                $table->date('published_at')->comment('The date the book was published');
                 $table->timestamps();
                 $table->softDeletes();
             });

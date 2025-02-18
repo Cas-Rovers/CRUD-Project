@@ -17,6 +17,8 @@
                 GenresTableSeeder::class,
                 BooksTableSeeder::class,
                 AuthorsTableSeeder::class,
+                AuthorBookTableSeeder::class,
+                BookGenreTableSeeder::class,
             ]);
         }
     }

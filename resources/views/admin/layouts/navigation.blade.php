@@ -6,7 +6,8 @@
             </div>
             <div class="sm:ml-6 sm:flex sm:space-x-8 flex justify-center items-center">
                 @auth
-                    <a href=""></a>
+                    <a href="{{ route('admin.books.index') }}"
+                       class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Books</a>
                     <a href="{{ route('admin.dashboard') }}"
                        class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
                     <form method="POST" action="{{ route('logout') }}" class="inline">

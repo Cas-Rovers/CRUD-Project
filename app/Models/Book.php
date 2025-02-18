@@ -6,8 +6,13 @@
     use Illuminate\Database\Eloquent\Factories\HasFactory;
     use Illuminate\Database\Eloquent\Model;
     use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-    use Illuminate\Database\Eloquent\Relations\HasMany;
 
+    /**
+     * Book Model
+     *
+     * Represents a book entity with attributes like title, description, price, stock, and published date.
+     * A book can be associated with many genres and authors through many-to-many relationships.
+     */
     class Book extends Model
     {
         /** @use HasFactory<BookFactory> */
@@ -21,32 +26,19 @@
         protected $fillable = [
             'title',
             'description',
-            'genre_id',
             'price',
             'stock',
-            'published_at'
+            'published_at',
         ];
-
-        /**
-         * Get the attributes that should be cast.
-         *
-         * @return array<string, string>
-         */
-        protected function casts(): array
-        {
-            return [
-                'published_at' => 'datetime',
-            ];
-        }
 
         /**
          * Get the genres associated with the book.
          *
-         * @return HasMany
+         * @return BelongsToMany
          */
-        public function genres(): HasMany
+        public function genres(): BelongsToMany
         {
-            return $this->hasMany(Genre::class);
+            return $this->belongsToMany(Genre::class)->withTimestamps();
         }
 
         /**
@@ -56,7 +48,6 @@
          */
         public function authors(): BelongsToMany
         {
-            return $this->belongsToMany(Author::class)->withPivot('contribution_type', 'royalty_percentage',
-                'contract_signed_at')->withTimestamps();
+            return $this->belongsToMany(Author::class)->withPivot('contribution_type', 'royalty_percentage', 'contract_signed_at')->withTimestamps();
         }
     }

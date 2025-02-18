@@ -10,10 +10,10 @@
          */
         public function up(): void
         {
-            Schema::create('book_genre', function (Blueprint $table) {
+            Schema::create('book_genre', function(Blueprint $table) {
                 $table->id()->comment('Unique identifier for the book genre');
-                $table->foreignId('book_id')->constrained('books')->comment('Foreign key constraint referencing the books table');
-                $table->foreignId('genre_id')->constrained('genres')->comment('Foreign key constraint referencing the genres table');
+                $table->foreignId('book_id')->constrained('books')->cascadeOnDelete()->comment('Foreign key constraint referencing the books table');
+                $table->foreignId('genre_id')->constrained('genres')->cascadeOnDelete()->comment('Foreign key constraint referencing the genres table');
                 $table->timestamps();
             });
         }

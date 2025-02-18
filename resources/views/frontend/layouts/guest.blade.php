@@ -14,10 +14,16 @@
     @endif
 </head>
 <body class="container font-sans antialiased dark:bg-gray-900 dark:text-gray-100">
-    <main class="">
+    @include('frontend.layouts.navigation')
+    <main class="my-3">
         @yield('content')
     </main>
     @vite('resources/assets/frontend/js/app.js')
     @stack('scripts')
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

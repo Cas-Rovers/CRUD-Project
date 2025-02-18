@@ -8,3 +8,6 @@
 
 @source '../../../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source "../../../views/admin";
+@source "../../../views/components/admin";
+
+@custom-variant dark (&:where(.dark, .dark *));

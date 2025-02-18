@@ -48,18 +48,10 @@
             'title' => 'Edit Author :name',
             'form' => [
                 'labels' => [
-                    'title' => 'Title',
-                    'description' => 'Description',
-                    'price' => 'Price',
-                    'stock' => 'Stock',
-                    'published_at' => 'Published At',
-                    'genres' => 'Genre(s)',
-                    'authors' => 'Author(s)',
-                    'submit' => 'Update Book',
-                ],
-                'placeholders' => [
-                    'genres' => 'Select a genre',
-                    'authors' => 'Select an author',
+                    'first_name' => 'First Name',
+                    'last_name' => 'Last Name',
+                    'biography' => 'Biography',
+                    'submit' => 'Add Author',
                 ],
             ],
         ],

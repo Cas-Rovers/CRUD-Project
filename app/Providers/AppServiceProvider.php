@@ -2,7 +2,9 @@
 
     namespace App\Providers;
 
+    use Carbon\CarbonImmutable;
     use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Support\Facades\Date;
     use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\URL;
     use Illuminate\Support\Facades\Vite;
@@ -64,5 +66,10 @@
         private function configureVite(): void
         {
             Vite::useAggressivePrefetching();
+        }
+
+        private function configureDate(): void
+        {
+            Date::use(CarbonImmutable::class);
         }
     }

@@ -33,17 +33,17 @@
             Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
             Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
-            Fortify::loginView(function () {
-                return view('auth.login');
+            Fortify::loginView(function() {
+                return view('frontend.auth.login');
             });
 
-            RateLimiter::for('login', function (Request $request) {
-                $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
+            RateLimiter::for('login', function(Request $request) {
+                $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())) . '|' . $request->ip());
 
                 return Limit::perMinute(5)->by($throttleKey);
             });
 
-            RateLimiter::for('two-factor', function (Request $request) {
+            RateLimiter::for('two-factor', function(Request $request) {
                 return Limit::perMinute(5)->by($request->session()->get('login.id'));
             });
         }

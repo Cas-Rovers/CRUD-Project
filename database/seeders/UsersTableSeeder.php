@@ -19,6 +19,6 @@
                 'email' => 'test@example.com',
             ]);
 
-            //User::factory(10)->create();
+            User::factory(100)->create();
         }
     }

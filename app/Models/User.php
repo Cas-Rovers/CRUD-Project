@@ -9,6 +9,12 @@
     use Illuminate\Foundation\Auth\User as Authenticatable;
     use Illuminate\Notifications\Notifiable;
 
+
+    /**
+     * User Model
+     *
+     * Represents a User entity with attributes like name and email.
+     */
     class User extends Authenticatable
     {
         /** @use HasFactory<UserFactory> */
@@ -24,7 +30,6 @@
             'email',
             'password',
         ];
-
         /**
          * The attributes that should be hidden for serialization.
          *

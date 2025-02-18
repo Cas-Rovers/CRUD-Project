@@ -49,8 +49,7 @@
 
         'show' => [
             'title' => 'Book :title',
-            'list' => [
-            ],
+            'list' => [],
         ],
 
         'edit' => [

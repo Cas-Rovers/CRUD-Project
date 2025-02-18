@@ -10,6 +10,8 @@
                        class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ __('admin/authors.index.title') }}</a>
                     <a href="{{ route('admin.books.index') }}"
                        class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ __('admin/books.index.title') }}</a>
+                    <a href="{{ route('admin.genres.index') }}"
+                       class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ __('admin/genres.index.title') }}</a>
                     <a href="{{ route('admin.dashboard') }}"
                        class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
                     <form method="POST" action="{{ route('logout') }}" class="inline">

@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\Admin\AuthorController;
     use App\Http\Controllers\Admin\BookController;
     use App\Http\Controllers\admin\DashboardController;
     use App\Http\Controllers\frontend\HomeController;
@@ -11,4 +12,5 @@
         Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
 
         Route::resource('books', BookController::class)->names('admin.books');
+        Route::resource('authors', AuthorController::class)->names('admin.authors');
     });

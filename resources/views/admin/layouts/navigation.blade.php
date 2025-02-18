@@ -6,8 +6,10 @@
             </div>
             <div class="sm:ml-6 sm:flex sm:space-x-8 flex justify-center items-center">
                 @auth
+                    <a href="{{ route('admin.authors.index') }}"
+                       class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ __('admin/authors.index.title') }}</a>
                     <a href="{{ route('admin.books.index') }}"
-                       class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Books</a>
+                       class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{ __('admin/books.index.title') }}</a>
                     <a href="{{ route('admin.dashboard') }}"
                        class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
                     <form method="POST" action="{{ route('logout') }}" class="inline">
